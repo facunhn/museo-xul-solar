@@ -11,3 +11,12 @@ function obrasrespuesta() {
     return JSON.parse (respuesta);
 }
 
+startServer(){
+
+subscribeGETEvent ("coleccíon", coleccion2)
+function coleccion2 () {
+    let contenido = fs.readFileSync("../data/obras.json", "utf-8");
+        return JSON.parse (contenido);
+}
+
+
