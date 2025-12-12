@@ -15,7 +15,7 @@ return true; //Devuelve true para confirmar que esta bien
 else { //La otra opcion en 
     coleccion = coleccion.filter(id =>  id !== info.id);  // Filtra el array, manteniendo solo los IDs que NO sean iguales a info.id, => = entonces, !== quiere decir si no es igual a...,
     
-    fs.writeFileSync("../data/coleccion.json", JSON.stringify(coleccion,null, 2)); // Guarda el array filtrado en el archivo JSON con formato legible
+    fs.writeFileSync("../data/coleccion.json", JSON.stringify(coleccion,null, 2)); // Guarda el array actualizado en el archivo JSON y convierte el objeto a texto JSON con indentación de 2 espacios
     
     return false; //Devuelve false indicando que se eliminó (o que no estaba en colección)
     }
@@ -35,4 +35,4 @@ return coleccion.includes(obra.id); // Retorna true si el ID de la obra actual e
 return filtradas; // Devuelve el array con las obras completas que están en la colección del usuario
 }
 subscribeGETEvent("obrasColección", obrascoleccion); // Registra la función obrascoleccion para responder a peticiones GET en la ruta "/obrasColección"
-startServer(); // Inicia el servidor para que comience a escuchar y responder peticiones HTTP
+startServer(); // Inicia el servidor para que comience a escuchar y responder peticiones
