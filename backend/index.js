@@ -40,7 +40,7 @@ function obrascoleccion() { // Declara la función obrascoleccion sin parámetro
    
    let coleccion = JSON.parse(fs.readFileSync("../data/coleccion.json", "utf-8")); // Lee y parsea el archivo con los IDs de la colección
    let obras = JSON.parse(fs.readFileSync("../data/obras.json", "utf-8")); // Lee y parsea el archivo con todas las obras disponibles
-   let filtradas = obras.filter(function (obra) { // Ffiltra el array de obras con una funcion que tiene el parametro obra y luego devuelve todas las obras poniendo true o false
+   let filtradas = obras.filter(function (obra) { // Filtra las obras, devolviendo solo aquellas cuyo ID está presente en la colección del usuario.
    return coleccion.includes(obra.id); // Retorna true si el ID de la obra actual está incluido en el array coleccion (mantiene solo las obras que están en la colección)
 });
    return filtradas; // Devuelve el array con las obras completas que están en la colección del usuario
